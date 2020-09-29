@@ -1,0 +1,74 @@
+<div class="container">   <!-- start of the question div-->
+ 
+  <div *ngFor="let q of myQuestions ">  <!--Looping the question array -->
+      
+        <div>    <!-- START -- one content of the question array -->
+                    <button type="button" class="btn btn-danger " (click)="deleteQuest(q._id)" style="float:right" > Delete</button>
+                     <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-primary" data-toggle="modal" (click)="openModalWithComponent(q)">
+                        Modify
+                    </button>       
+                    <br><br>
+                
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1" >Question</span>
+                              </div>
+                              <input type="text" class="form-control" value={{q.question}} readonly aria-describedby="basic-addon1">
+                            </div>  
+                    
+                    
+                              <div style="width:100% ;background-color:aliceblue; border-radius:10px;padding:15px;margin-top:0px;" >
+                                  
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                    <input type="radio" [checked]="q.correctAns ==1" onClick="this.checked=false" aria-label="Radio button for following text input">
+                                    </div>
+                                  </div>
+                                  <input type="text"  class="form-control" value={{q.option1}} readonly aria-label="Text input with radio button">
+                                </div>
+                                  <br>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                    <input type="radio"[checked]="q.correctAns ==2" onClick="this.checked=false"  aria-label="Radio button for following text input">
+                                    </div>
+                                  </div>
+                                  <input type="text" class="form-control" value={{q.option2}} readonly aria-label="Text input with radio button">
+                                </div>
+                                  <br>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                    <input type="radio" [checked]="q.correctAns ==3" onClick="this.checked=false"  aria-label="Radio button for following text input">
+                                    </div>
+                                  </div>
+                                  <input type="text"  class="form-control" value={{q.option3}} readonly aria-label="Text input with radio button">
+                                </div>
+                                  <br>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                    <input type="radio"[checked]="q.correctAns ==4" onClick="this.checked=false" aria-label="Radio button for following text input">
+                                    </div>
+                                  </div>
+                                  <input type="text"class="form-control" value={{q.option4}} readonly aria-label="Text input with radio button">
+                                </div>
+                           
+                              </div>
+                                  <br>
+                                  <hr class="my-4">
+                      
+               <!-- </div> END -- one content of the question array -->
+          <!-- </div>  main loop                    --> 
+                               
+
+                      </div> <!-- END -- one content of the question array -->
+                    </div>  <!--main loop-->    
+              
+         
+         
+    
+     
+  </div>

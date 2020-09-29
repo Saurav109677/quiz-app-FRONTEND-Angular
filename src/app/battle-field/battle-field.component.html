@@ -1,0 +1,64 @@
+
+<div class="container">
+
+    <div class="jumbotron">
+      <div class="jumbotron">
+        <!-- Timer -->
+        <div style="background-color: aliceblue;float:right;padding:10px;border-radius:10px">
+          <h3><countdown  #cd [config]="{leftTime: 3000, notify:[5]}" (event)="onEventFire($event)"></countdown></h3>
+          <!-- <a (click)="cd.resume()">Start</a> -->
+        </div>
+        
+        <!-- Timer Ends -->
+        <br><br>
+        <h1 class="display-4">Quiz App</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <!-- <form formGroup="usersPage" > -->
+        <div >   <!-- start of the question div-->
+           
+                
+                  <button type="button"  style="width:100%;text-align: left;" class="btn btn-secondary  btn-lg"  data-display="static" aria-haspopup="true" aria-expanded="false">
+                    {{loadQ.question}}
+                  </button><br>
+                 
+                  <form [formGroup]="oneQuestForm" >
+                      <input type="text" readonly value={{loadQ._id}} formControlName="questionId" style="visibility:hidden;" >
+                          <div style="width:100% ;background-color:aliceblue; border-radius:10px;padding:15px;margin-top:0px;" >
+                              
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" value="1" class="custom-control-input" id="defaultUnchecked" formControlName="userAnswer">
+                                  <label class="custom-control-label" for="defaultUnchecked"> {{loadQ.option1}}</label>
+                                </div>
+                                <hr>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" value="2" class="custom-control-input" id="defaultUnchecked1" formControlName="userAnswer" >
+                                  <label class="custom-control-label" for="defaultUnchecked1">{{loadQ.option2}}</label>
+                                </div>
+                                <hr>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" value="3"  class="custom-control-input" id="defaultUnchecked2" formControlName="userAnswer" >
+                                  <label class="custom-control-label" for="defaultUnchecked2">{{loadQ.option3}}</label>
+                                </div>
+                                <hr>
+                                <div class="custom-control custom-radio">
+                                  <input type="radio" value="4" class="custom-control-input" id="defaultUnchecked3" formControlName="userAnswer" >
+                                  <label class="custom-control-label" for="defaultUnchecked3">{{loadQ.option4}}</label>
+                                </div>
+                              
+                              
+                          </div>
+               
+                    <br>
+                    <br>
+                  <button type="button" class="btn btn-info btn-lg" style="float:left" *ngIf="!firstIndex" (click)="previousQ()">Previous</button>
+                  <button type="button" class="btn btn-info btn-lg" style="float:right" *ngIf="!lastIndex" (click)="nextQ()">Next</button>
+                  <button type="button" class="btn btn-success btn-lg" style="float:right" *ngIf="lastIndex" (click)="onSubmitAns()" > Submit</button>  
+                </form>
+                    
+                 
+        </div>
+   
+      </div>
+    </div>
+  </div>

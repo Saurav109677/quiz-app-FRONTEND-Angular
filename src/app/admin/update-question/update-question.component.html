@@ -1,0 +1,141 @@
+<div class="modal-content" style="width:900px;height:600px;margin-left:-200px" *ngIf="showModal"> 
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Question</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" >
+                <!-- START adding the update form here -->
+                <!-- <form > -->
+                    
+                    <div >
+                    
+                            <form [formGroup]="updateForm">
+                                        <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"  id="basic-addon1" >Question</span>
+                                        </div>
+                                        <input type="text" class="form-control" formControlName="question" value={{list[0].question}}  aria-describedby="basic-addon1">
+                                        </div>  
+                                    <div style="width:100% ;background-color:aliceblue; border-radius:10px;padding:15px;margin-top:0px;" >
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                            <input type="radio"   formControlName="correctAns" [checked]="list[0].correctAns ==1"  value="1" aria-label="Radio button for following text input">
+                                            </div>
+                                            </div>
+                                            <input type="text" formControlName="option1" value={{list[0].option1}}  class="form-control" aria-label="Text input with radio button">
+                                        </div>
+
+                                        <br>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                            <input type="radio"  formControlName="correctAns" [checked]="list[0].correctAns ==2" value="2" aria-label="Radio button for following text input">
+                                            </div>
+                                            </div>
+                                            <input type="text" formControlName="option2" value={{list[0].option2}} class="form-control" aria-label="Text input with radio button">
+                                        </div>
+
+                                        <br>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                            <input type="radio"  formControlName="correctAns" [checked]="list[0].correctAns ==3"  value="3" aria-label="Radio button for following text input">
+                                            </div>
+                                            </div>
+                                            <input type="text" formControlName="option3" value={{list[0].option3}}  class="form-control" aria-label="Text input with radio button">
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                            <input type="radio"  formControlName="correctAns" [checked]="list[0].correctAns ==4" value="4" aria-label="Radio button for following text input">
+                                            </div>
+                                            </div>
+                                            <input type="text"  formControlName="option4" value={{list[0].option4}} class="form-control" aria-label="Text input with radio button">
+                                        </div>
+                                
+                                </div>  
+                            </form>
+                        </div>
+                    <!-- </form> -->
+                <!-- END adding the update form here -->
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+            <button type="button" class="btn btn-primary" (click)=onSubmit()>Save changes</button>
+        </div>
+</div>
+
+        <!-- <div  class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog " role="document" >
+            <div class="modal-content" style="width:900px;height:600px;margin-left:-200px">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Question</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body"> -->
+
+                <!-- adding form -->
+                <!-- <form></form> -->
+                    <!-- <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1" >Question</span>
+                        </div>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1">
+                    </div>  
+            
+            
+                        <div style="width:100% ;background-color:aliceblue; border-radius:10px;padding:15px;margin-top:0px;" >
+                            
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">
+                            <input type="radio"  aria-label="Radio button for following text input">
+                            </div>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Text input with radio button">
+                        </div>
+                            <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">
+                            <input type="radio"    aria-label="Radio button for following text input">
+                            </div>
+                            </div>
+                            <input type="text"  class="form-control" aria-label="Text input with radio button">
+                        </div>
+                            <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">
+                            <input type="radio"   aria-label="Radio button for following text input">
+                            </div>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Text input with radio button">
+                        </div>
+                            <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">
+                            <input type="radio"  aria-label="Radio button for following text input">
+                            </div>
+                            </div>
+                            <input type="text"  class="form-control" aria-label="Text input with radio button">
+                        </div>
+                            
+                        </div> -->
+                    <!-- form section ends -->
+                <!-- </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div> -->

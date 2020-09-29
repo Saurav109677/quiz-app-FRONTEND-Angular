@@ -1,0 +1,78 @@
+
+
+<div class="container">   <!-- start of the question div-->
+
+     <div class="jumbotron">
+          <h1 class="display-4">Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+ 
+            <form  [formGroup]="addForm">
+              <div formArrayName="quesAnsArray">
+                
+                        <div *ngFor="let q of questionArray.controls ; let i=index;" [formGroupName]="i">
+                          <button type="button" class="btn btn-danger btn-lg" style="float:right" (click)="onFormDelete(i)" > Delete</button>
+                                  <br><br>
+                                  <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1" >Question</span>
+                                    </div>
+                                    <input type="text" class="form-control" formControlName="question" placeholder="Write your question here!"  aria-describedby="basic-addon1">
+                                  </div>  
+                          
+                          
+                                    <div style="width:100% ;background-color:aliceblue; border-radius:10px;padding:15px;margin-top:0px;" >
+                                        
+                                      <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                          <input type="radio" formControlName="correctAns" value="1" aria-label="Radio button for following text input">
+                                          </div>
+                                        </div>
+                                        <input type="text" formControlName="option1" class="form-control" aria-label="Text input with radio button">
+                                      </div>
+                                        <br>
+                                      <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                          <input type="radio"  formControlName="correctAns"  value="2"  aria-label="Radio button for following text input">
+                                          </div>
+                                        </div>
+                                        <input type="text" formControlName="option2" class="form-control" aria-label="Text input with radio button">
+                                      </div>
+                                        <br>
+                                      <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                          <input type="radio" formControlName="correctAns"  value="3"  aria-label="Radio button for following text input">
+                                          </div>
+                                        </div>
+                                        <input type="text" formControlName="option3" class="form-control" aria-label="Text input with radio button">
+                                      </div>
+                                        <br>
+                                      <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                          <input type="radio" formControlName="correctAns" value="4"  aria-label="Radio button for following text input">
+                                          </div>
+                                        </div>
+                                        <input type="text" formControlName="option4" class="form-control" aria-label="Text input with radio button">
+                                      </div>
+                                        
+                                    </div>
+                                        <br>
+                                        <hr class="my-4">
+                              </div> 
+                                          <button type="button" class="btn btn-success btn-lg" style="float:right" (click)="onSubmit()" > Submit</button>
+                                          <button type="button" class="btn btn-primary btn-lg" style="float:left" (click)="newForm()" > Add Another</button>  
+
+
+                       
+
+                     
+                   </div>
+                </form>
+      </div> 
+   
+</div>
